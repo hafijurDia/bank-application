@@ -1,10 +1,17 @@
 // withdraw money
 document.getElementById('btn-widraw').addEventListener('click',function(){
+    
+
 
     //input deposit
     const inputWithdraw = document.getElementById('widraw');
     const newWithdrawString = inputWithdraw.value;
     const newWithdrawfloat = parseFloat(newWithdrawString);
+    inputWithdraw.value = '';
+    if (isNaN(newWithdrawfloat)) {
+        alert('provide a valid number');
+        return;
+    }
 
     //total withdraw
     const withdrawElement = document.getElementById('total-widraw');
@@ -16,6 +23,7 @@ document.getElementById('btn-widraw').addEventListener('click',function(){
     const previousBalanceString = previousBalance.innerText;
     const previousBalanceFloat = parseFloat(previousBalanceString);
 
+   
     if(newWithdrawfloat < 1){
         alert('Sorry you cannot input negative value'); 
     }else if(newWithdrawfloat > previousBalanceFloat){

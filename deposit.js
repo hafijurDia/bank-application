@@ -5,7 +5,11 @@ document.getElementById('btn-deposit').addEventListener('click',function(){
     const inputDeposit = document.getElementById('deposit');
     const newDepositString = inputDeposit.value;
     const newDepositfloat = parseFloat(newDepositString);
-
+    inputDeposit.value = '';
+    if (isNaN(newDepositfloat)) {
+        alert('Please provide a valid number');
+        return;
+    }
     //total deposit
     const depositElement = document.getElementById('total-deposit');
     const previousAmount = depositElement.innerText;
