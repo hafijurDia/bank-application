@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <section class="dashborad w-9/12 mx-auto">
+        <h1 class="text-green-600 text-5xl font-bold text-center mb-16 mt-16">
+            Let's Get Some Moooooney
+        </h1> 
+
+        <div class="grid grid-cols-3 gap-10 justify-evenly"> 
+            <div class="bg-green-700 w-26 rounded-md p-6">
+                <h2 class="font-semibold text-3xl text-white mb-4">Deposit</h2>
+                <h1 class="font-semibold text-5xl text-white">$<span id="total-deposit">00</span> </h1>
+            </div> 
+            <div class="bg-pink-500 w-26 p-6 rounded-md">
+                <h2 class="font-semibold text-3xl text-white mb-4">Widraw</h2>
+                <h1 class="font-semibold text-5xl text-white">$<span id="total-widraw">00</span></h1>
+            </div> 
+            <div class="bg-yellow-500 w-26 p-6 rounded-md">
+                <h2 class="font-semibold text-3xl text-white mb-4">Balance</h2>
+                <h1 class="font-semibold text-5xl text-white">$<span id="total-balance">100</span></h1>
+            </div> 
+        </div> 
+
+        <div class="grid grid-cols-2 gap-10 justify-evenly mt-10"> 
+            <div class="bg-blue-900 w-26 rounded-md p-6">
+                <h2 class="font-semibold text-3xl mb-5 text-white">Please Deposit $$$</h2>
+                <input type="number" id="deposit" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-6/12 p-2.5 dark:bg-white-700 dark:border-gray-600 dark:placeholder-white-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Deposit your money">
+                <button type="submit" id="btn-deposit" class="bg-yellow-500 hover:bg-pink-700 text-white font-semibold py-2 px-4 rounded mt-5 text-2xl">Deposit</button>
+            </div> 
+            <div class="bg-green-500 w-26 p-6 rounded-md">
+                <h2 class="font-semibold text-3xl mb-5 text-white">Widraw your $$$</h2>
+                <input type="number" id="widraw" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-6/12 p-2.5 dark:bg-white-700 dark:border-gray-600 dark:placeholder-white-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Widraw your money">
+                <button type="submit" id="btn-widraw" class="bg-yellow-500 hover:bg-pink-700 text-white font-semibold py-2 px-4 rounded mt-5 text-2xl">Widraw</button>
+            </div> 
+            
+            </div> 
+        </div> 
+    </section>
+    <script src="deposit.js"></script>
+    <script src="withdraw.js"></script>
+</body>
+</html>
