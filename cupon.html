@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900">
+    <section class="dashborad w-9/12 mx-auto ">
+        <h1 class="text-green-600 text-5xl font-bold text-center mb-16 mt-16">
+            Let's Get Some Discount !!!
+        </h1> 
+
+        <div class="grid grid-cols-2 gap-10 justify-evenly mt-10"> 
+            <div class="bg-blue-900 w-26 rounded-md p-6">
+                <h2 class="font-semibold text-3xl mb-5 text-white">Total Price: $<span id="price">1000</span> </h2>
+                <input type="text" id="cupon-code" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-6/12 p-2.5 dark:bg-white-700 dark:border-gray-600 dark:placeholder-white-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Deposit your money">
+                <button type="submit" id="discount-btn" class="bg-yellow-500 hover:bg-pink-700 text-white font-semibold py-2 px-4 rounded mt-5 text-2xl">Apply for Discount</button>
+                <h4 class="font-semibold text-2xl mb-5 text-white mt-10" id="hidenElement" style="display: none;">Please Pay $<span id="discount-amount"></span> </h4>
+            </div> 
+          
+            
+            </div> 
+        </div> 
+    </section>
+   <script>
+    const showPaymentPrice = document.getElementById('hidenElement');
+    const discountBtn = document.getElementById('discount-btn');
+    discountBtn.addEventListener('click',function(){
+        const cuponCodeInput = document.getElementById('cupon-code').value;
+        const discountElement = document.getElementById('discount-amount');
+        if (cuponCodeInput === 'HAFIJur11') {
+            const totalPrice = document.getElementById('price').innerText;
+            const totalPriceParse = parseFloat(totalPrice);
+            const discountAmount = (30/100) * totalPriceParse;
+            const finalPrice = totalPriceParse - discountAmount;
+            discountElement.innerText = finalPrice;
+            document.getElementById('hidenElement').style.display = 'block';
+        }else{
+            discountElement.innerText = '1000';
+            document.getElementById('hidenElement').style.display = 'block';
+        }
+        
+
+    })
+
+    // discountBtn.addEventListener('click',function(){
+    //     const totalPrice = document.getElementById('price').innerText;
+    //     const totalPriceParse = parseFloat(totalPrice);
+    //     const discountAmount = (30/100) * totalPriceParse;
+    //     const finalPrice = totalPriceParse - discountAmount;
+    //     const discountElement = document.getElementById('discount-amount');
+    //     discountElement.innerText = finalPrice;
+    //     document.getElementById('hidenElement').style.display = 'block';
+
+    // })
+
+    
+
+
+    
+
+
+   </script>
+    
+</body>
+</html>

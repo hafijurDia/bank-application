@@ -1,7 +1,5 @@
 // withdraw money
 document.getElementById('btn-widraw').addEventListener('click',function(){
-    
-
 
     //input deposit
     const inputWithdraw = document.getElementById('widraw');

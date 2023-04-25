@@ -1,26 +1,21 @@
+
 // deposit money
 document.getElementById('btn-deposit').addEventListener('click',function(){
+    //newdoposit
+    const newDeposit = getInputFieldValueById('deposit');
+    //prevoius deposit
+    const previousDeposit = getElementValueById('total-deposit');
+    
+    //calulate total deposit
+    const depositTotal = previousDeposit + newDeposit;
 
-    //input deposit
-    const inputDeposit = document.getElementById('deposit');
-    const newDepositString = inputDeposit.value;
-    const newDepositfloat = parseFloat(newDepositString);
-    inputDeposit.value = '';
-    if (isNaN(newDepositfloat)) {
-        alert('Please provide a valid number');
-        return;
-    }
-    //total deposit
-    const depositElement = document.getElementById('total-deposit');
-    const previousAmount = depositElement.innerText;
-    const previousAmountFloat = parseFloat(previousAmount);
-    depositElement.innerText = previousAmountFloat + newDepositfloat;
+    //set deposit value
+    setElementValueById('total-deposit', depositTotal);
 
-    // total balance update
-    const previousBalance = document.getElementById('total-balance');
-    const previousBalanceString = previousBalance.innerText;
-    const previousBalanceFloat = parseFloat(previousBalanceString);
-    previousBalance.innerText = previousBalanceFloat + newDepositfloat;
+    //get previous balance by using function
+    const previousBalance = getElementValueById('total-balance');
+    const newBalance = previousBalance + newDeposit;
 
+    setElementValueById('total-balance', newBalance);
 
 })
